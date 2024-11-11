@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Games Campaign</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <style>
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .fade-in.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .slide-left {
+        transform: translateX(100%);
+        opacity: 0;
+        transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+      }
+
+      .slide-left.active {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      .zoom-in {
+        transform: scale(0);
+        transition: transform 0.8s ease-out;
+      }
+
+      .zoom-in.active {
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-white overflow-x-hidden">
+    <header class="bg-cyan-700 p-6 fade-in">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-3xl font-bold">Games Campaign</h1>
+        <nav>
+          <ul class="flex space-x-6">
+            <li><a href="#features" class="hover:text-cyan-400">Why Games?</a></li>
+            <li><a href="#examples" class="hover:text-cyan-400">Positive Games</a></li>
+            <li><a href="#testimonials" class="hover:text-cyan-400">Testimonials</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="home" class="h-screen flex flex-col justify-center items-center bg-cover bg-center zoom-in" style="background-image: url('https://source.unsplash.com/1600x900/?cyberpunk,game')">
+      <h2 class="text-5xl font-extrabold text-white">Nilai Positif Dari Game</h2>
+      <p class="text-xl text-cyan-200 mt-4">Mengapa Game Bisa Memberikan Manfaat ?</p>
+    </section>
+
+    <section id="features" class="py-12">
+      <div class="container mx-auto text-center fade-in">
+        <h3 class="text-4xl font-bold mb-6">Mengapa Game Bisa Bersifat Positif?</h3>
+        <p class="text-lg text-cyan-200 mb-12">Memiliki berbagai manfaat yang dapat ditawarkan permainan, mulai dari meningkatkan pemikiran kritis hingga membantu kesehatan mental.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-800 p-6 rounded-lg hover:scale-105 transition-transform duration-300 fade-in">
+            <h4 class="text-2xl font-semibold mb-2">Meningkatkan Berpikir Kritis</h4>
+            <p>Permainan menantang pemain untuk memecahkan masalah yang kompleks, mempertajam keterampilan pengambilan keputusan mereka.</p>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg hover:scale-105 transition-transform duration-300 fade-in">
+            <h4 class="text-2xl font-semibold mb-2">Mempromosikan Kerja Sama Tim</h4>
+            <p>Game multipemain mendorong kolaborasi, mengharuskan pemain bekerja sama untuk mencapai tujuan bersama.</p>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg hover:scale-105 transition-transform duration-300 fade-in">
+            <h4 class="text-2xl font-semibold mb-2">Manfaat Kesehatan Mental</h4>
+            <p>Game memberikan cara untuk menghilangkan stres, rileks, dan membantu meningkatkan mood jika dimainkan secara bertanggung jawab.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="examples" class="py-12 bg-gray-900">
+      <div class="container mx-auto text-center">
+        <h3 class="text-4xl font-bold text-white mb-6">Examples of Positive Games</h3>
+        <div class="relative flex items-center justify-center">
+          <button id="scrollLeft" class="absolute left-0 bg-cyan-500 hover:bg-cyan-400 text-white p-3 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <div class="scroll-container w-full overflow-hidden">
+            <div class="flex transition-transform duration-300" id="slider">
+              <div class="scroll-item bg-gray-800 p-6 rounded-lg w-full flex-shrink-0">
+                <h4 class="text-2xl font-semibold mb-2">Minecraft</h4>
+                <p>Minecraft menumbuhkan kreativitas, pemecahan masalah, dan kerja tim dalam lingkungan kolaboratif.</p>
+                <a href="https://www.minecraft.net" class="mt-4 inline-block bg-cyan-500 text-white px-4 py-2 rounded-full hover:bg-cyan-400">Play Minecraft</a>
+              </div>
+
+              <div class="scroll-item bg-gray-800 p-6 rounded-lg w-full flex-shrink-0">
+                <h4 class="text-2xl font-semibold mb-2">Civilization VI</h4>
+                <p>Pemikiran strategis adalah suatu keharusan dalam game ini, di mana pemain membangun dan mengelola seluruh peradaban.</p>
+                <a href="https://civilization.com" class="mt-4 inline-block bg-cyan-500 text-white px-4 py-2 rounded-full hover:bg-cyan-400">Play Civilization VI</a>
+              </div>
+
+              <div class="scroll-item bg-gray-800 p-6 rounded-lg w-full flex-shrink-0">
+                <h4 class="text-2xl font-semibold mb-2">Celeste</h4>
+                <p>Sebuah game yang terkenal dengan cerita emosional dan fokus pada kesehatan mental, mengatasi tantangan.</p>
+                <a href="https://www.celestegame.com" class="mt-4 inline-block bg-cyan-500 text-white px-4 py-2 rounded-full hover:bg-cyan-400">Play Celeste</a>
+              </div>
+            </div>
+          </div>
+
+          <button id="scrollRight" class="absolute right-0 bg-cyan-500 hover:bg-cyan-400 text-white p-3 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="py-12 bg-gray-800 text-center slide-left">
+      <h3 class="text-4xl font-bold text-white mb-6">What Peoples Say</h3>
+      <div class="flex justify-center space-x-4">
+        <div class="bg-gray-700 p-6 rounded-lg w-1/3">
+          <p>"Dia percaya bahwa game akan terus menjadi bagian penting dari inovasi teknologi dan ekonomi digital, serta berperan dalam membentuk pengalaman digital masa depan."</p>
+          <span class="block mt-4 font-bold">- Marc Andreessen, Co-founder Andreessen Horowitz</span>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-lg w-1/3">
+          <p>"Newell percaya bahwa teknologi adalah kunci untuk menciptakan pengalaman bermain game yang lebih baik."</p>
+          <span class="block mt-4 font-bold">- Gabe Newell, co-founder dan CEO Valve Corporation</span>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const scrollContainer = document.querySelector(".scroll-container");
+      const scrollLeftButton = document.getElementById("scrollLeft");
+      const scrollRightButton = document.getElementById("scrollRight");
+
+      const scrollItemWidth = document.querySelector(".scroll-item").offsetWidth;
+
+      scrollLeftButton.addEventListener("click", () => {
+        scrollContainer.scrollBy({ left: -scrollItemWidth, behavior: "smooth" });
+      });
+
+      scrollRightButton.addEventListener("click", () => {
+        scrollContainer.scrollBy({ left: scrollItemWidth, behavior: "smooth" });
+      });
+
+      // On Scroll Animation Trigger
+      const fadeElements = document.querySelectorAll(".fade-in, .slide-left, .zoom-in");
+      window.addEventListener("scroll", () => {
+        fadeElements.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight) {
+            el.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
